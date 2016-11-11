@@ -19,7 +19,8 @@ swift build
 这样我们就可以通过网络访问了。
 一个几本的服务器就搭建好了。
 
-等等，现在的苹果都要求要给予https进行项目开发了，那么。我们该怎么做呢？
+等等，现在的苹果都要求要给予https进行项目开发了。
+那么，我们该怎么做呢？
 目前自己在文档上并没有查到相关的说明。大概看了一下HTTPServer.swift文件
 里面有
 public func start(port: UInt16, sslCert: String, sslKey: String, bindAddress: String = "0.0.0.0")
@@ -32,3 +33,8 @@ public func start(port: UInt16, sslCert: String, sslKey: String, bindAddress: St
 接下来，就看了一下ssl属性，原来是一个元组。包含了两个字符串。
 到这里我们基本上已经明白了，我们需要做的就是配置一个sslCert和sslKey。要说明这里要配置的是这两个文件能够查找的文件路径。
 不过对于这个路径我们可以按照工程的相对路径进行配置。配置好后执行上面的编译和执行操作。一切几本就OK了。
+
+
+
+Perfect框架介绍
+Perfect框架是一款轻量级的性能优秀的swift版服务器开发框架，甚至我们不需要专门提供搭建Pefect配置，而只需要通过Swift的SPM来引入相关的Framework。同时Perfect支持http和https。并集成了对websocket的服务器端支持。而且要搭建一个基于Perfect的服务器也非常简单。
